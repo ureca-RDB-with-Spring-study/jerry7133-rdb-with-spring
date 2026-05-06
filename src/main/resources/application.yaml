@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: mall
+  datasource:
+    url: jdbc:mysql://mysql:3306/mall_db
+    username: mall
+    password: mall1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mapper/**/*.xml
