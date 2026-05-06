@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.mall.mapper.ProductMapper">
+    <insert id="save">
+        INSERT INTO products(product_id, name, description, price, stock_quantity)
+        VALUES (#{product.productId}, #{product.name}, #{product.description},
+        #{product.price}, #{product.stockQuantity});
+    </insert>
+
+    <select id="getProducts">
+        SELECT * from products;
+    </select>
+
+    <select id="getProductById" parameterType="int" resultType="com.example.mall.dto.ProductDto">
+        SELECT * from products where product_id = #{productId};
+    </select>
+</mapper>
