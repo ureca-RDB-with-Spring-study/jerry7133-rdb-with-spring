@@ -9,6 +9,8 @@ import java.util.List;
 @Mapper
 public interface CustomerMapper {
     void save(@Param("cust") CustomerDto customerDto);
+    CustomerDto signup(@Param("cust") CustomerDto customerDto);
+    CustomerDto login(@Param("id") String id, @Param("password") String password);
     List<CustomerDto> getCustomers();
     CustomerDto getCustomerById(@Param("customerId") int customerId);
 }

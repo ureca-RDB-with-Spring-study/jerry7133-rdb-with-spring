@@ -11,10 +11,17 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 public class CustomerDto {
 
-    private int customerId;
+    private Long customerId;
     private String name;
     private String email;
     private String password;
     private String address;
     private Timestamp joinDate;
+
+    public CustomerDto(SignupRequest signupRequest) {
+        this.name = signupRequest.getName();
+        this.email = signupRequest.getEmail();
+        this.password = signupRequest.getPassword();
+        this.address = signupRequest.getAddress();
+    }
 }
